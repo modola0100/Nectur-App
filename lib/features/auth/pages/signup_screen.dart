@@ -8,6 +8,7 @@ import 'package:nectar_ui/core/widgets/custom_password_field.dart';
 import 'package:nectar_ui/core/widgets/custom_text_field.dart';
 import 'package:nectar_ui/core/widgets/main_button.dart';
 import 'package:nectar_ui/features/auth/pages/login_screen.dart';
+import 'package:nectar_ui/features/location/pages/location_screen.dart';
 
 // L>R>L>R>L>
 
@@ -87,7 +88,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
 
                 SizedBox(height: 40),
-                MainButton(text: 'SignUp', onPressed: () {}),
+                MainButton(
+                  text: 'SignUp',
+                  onPressed: () {
+                    if (formKey.currentState!.validate()) {
+                      pushWithReplacement(context, LocationScreen());
+                    }
+                  },
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

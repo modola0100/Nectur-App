@@ -9,11 +9,7 @@ import 'package:nectar_ui/core/widgets/custom_text_field.dart';
 import 'package:nectar_ui/core/widgets/main_button.dart';
 import 'package:nectar_ui/features/auth/pages/signup_screen.dart';
 import 'package:nectar_ui/features/location/pages/location_screen.dart';
-
-// Wrap Column with Form Widget
-// create a form key and pass it to Form Widget
-// add validation to email and password ("validator")
-// check if form is valid when Button is pressed
+import 'package:nectar_ui/features/main/main_app_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -98,7 +94,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     onPressed: () {
                       if (formKey.currentState!.validate()) {
                         // navigate to home screen
-                        pushWithReplacement(context, const LocationScreen());
+                        pushWithReplacement(context, MainAppScreen());
                       }
                     },
                   ),

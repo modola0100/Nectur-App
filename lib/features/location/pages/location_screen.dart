@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:nectar_ui/core/constants/app_images.dart';
+import 'package:nectar_ui/core/functions/naviagtion.dart';
 import 'package:nectar_ui/core/widgets/custom_text_field.dart';
 import 'package:nectar_ui/core/widgets/main_button.dart';
+import 'package:nectar_ui/features/main/main_app_screen.dart';
 
 class LocationScreen extends StatelessWidget {
   const LocationScreen({super.key});
@@ -34,7 +36,13 @@ class LocationScreen extends StatelessWidget {
                 prefix: Icon(Icons.location_on_outlined, color: Colors.grey),
               ),
               SizedBox(height: 60),
-              MainButton(text: 'Set Location', onPressed: () {}, width: 300),
+              MainButton(
+                text: 'Set Location',
+                onPressed: () {
+                  pushWithReplacement(context, MainAppScreen());
+                },
+                width: 300,
+              ),
             ],
           ),
         ),
