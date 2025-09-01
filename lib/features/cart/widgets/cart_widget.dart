@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nectar_ui/features/cart/model/cart_item.dart';
+import 'package:nectar_ui/features/details/page/product_details_screen.dart';
 
 class CartWidget extends StatelessWidget {
   final CartItem item;
@@ -22,13 +23,23 @@ class CartWidget extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(8.0),
-            child: Image.asset(
-              item.imageUrl,
-              width: 80,
-              height: 80,
-              fit: BoxFit.cover,
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ProductDetailsScreen(model: item),
+                ),
+              );
+            },
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(8.0),
+              child: Image.asset(
+                item.imageUrl,
+                width: 80,
+                height: 80,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           SizedBox(width: 16.0),
